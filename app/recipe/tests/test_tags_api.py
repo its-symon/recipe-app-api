@@ -22,7 +22,7 @@ class PublicTagAPITests(TestCase):
 
     def test_auth_required(self):
         res = self.client.get(TAGS_URL)
-        self.assertEqual(res.status_code, status.HTTP_403_FORBIDDEN)
+        self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 
 class PrivateTagAPITests(TestCase):
     def setUp(self):
